@@ -34,4 +34,12 @@ public class NotificationService {
     }
 
     public Set<String> names() { return byName.keySet(); }
+
+    public String viaCustom(String message) {
+        Notifier customNotifier = byName.get("truncating");
+        if (customNotifier != null) {
+            return customNotifier.send(message);
+        }
+        return "Custom notifier not found";
+    }
 }

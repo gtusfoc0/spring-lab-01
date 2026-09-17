@@ -41,4 +41,9 @@ public class Lab2Controller {
     public Map<String, Object> scopes() {
         return ticketOffice.demo();
     }
+
+    @GetMapping("/custom")
+    public String custom(@RequestParam(defaultValue = "Spring Framework Lab Work") String text) {
+        return notifications.viaCustom(text);
+    }
 }
