@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: spring-lab
+
+server:
+  port: 8080
+
+app:
+  owner: Manyapov Ravil
+  group: IT1CC0-2503IS
+  mail:
+    from: no-reply@iitu.kz
+    retry-count: 3
+    timeout: 5s
+    enabled: true
+  locale:
+    default-locale: ru
+    supported:
+      - ru
+      - kk
+      - en
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,env,configprops,conditions
+
+logging:
+  level:
+    kz.iitu: INFO
